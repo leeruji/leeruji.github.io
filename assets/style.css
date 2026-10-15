@@ -1,0 +1,91 @@
+/* 루지의 작업 기록 — 글자 대비 WCAG AAA(7:1 이상), 간격 4px 단위, 다크 모드 지원 */
+:root {
+  --bg: #ffffff;
+  --fg: #1d1d1f;      /* 16.8:1 */
+  --muted: #4e4e51;   /* 8.3:1 */
+  --accent: #4232c4;  /* 8.5:1 */
+  --line: #d9d9de;
+  --soft: #f4f4f6;    /* 코드·인용 바탕 */
+  --mark: rgba(255, 214, 10, 0.38);
+  --maxw: 720px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1e;
+    --fg: #f5f5f7;    /* 15.6:1 */
+    --muted: #c2c2c5; /* 9.6:1 */
+    --accent: #c1bbff;/* 9.6:1 */
+    --line: #3a3a3d;
+    --soft: #26262a;
+    --mark: rgba(255, 214, 10, 0.28);
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; padding: 8px 12px; background: var(--bg); border: 1px solid var(--accent); z-index: 1; }
+
+.site-head, main, .site-foot { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+.site-head { padding-top: 32px; padding-bottom: 32px; }
+.site-title { color: var(--fg); font-weight: 700; text-decoration: none; }
+.site-foot { margin-top: 80px; padding-top: 24px; padding-bottom: 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+
+/* 첫 화면 */
+.intro h1 { margin: 0 0 8px; font-size: 32px; line-height: 1.3; letter-spacing: -0.02em; }
+.intro p { margin: 0 0 40px; color: var(--muted); }
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list li { border-top: 1px solid var(--line); }
+.post-list li:last-child { border-bottom: 1px solid var(--line); }
+.post-list a { display: grid; gap: 4px; padding: 20px 0; color: var(--fg); text-decoration: none; }
+.post-list a:hover .pl-title { color: var(--accent); text-decoration: underline; }
+.pl-date { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.pl-title { font-size: 20px; font-weight: 700; line-height: 1.4; }
+.pl-summary { color: var(--muted); font-size: 15px; }
+
+/* 글 */
+.post-meta { margin: 0 0 8px; color: var(--muted); font-size: 14px; }
+.post-head h1 { margin: 0; font-size: 32px; line-height: 1.3; letter-spacing: -0.02em; }
+.post-summary { margin: 12px 0 0; color: var(--muted); font-size: 18px; }
+.post-head { padding-bottom: 32px; margin-bottom: 32px; border-bottom: 1px solid var(--line); }
+.post-body > * { margin: 0; }
+.post-body > * + * { margin-top: 16px; }
+.post-body h2 { margin-top: 48px; font-size: 24px; line-height: 1.4; letter-spacing: -0.01em; }
+.post-body h3 { margin-top: 32px; font-size: 19px; line-height: 1.4; }
+.post-body h2 + *, .post-body h3 + * { margin-top: 8px; }
+.post-body ul, .post-body ol { padding-left: 24px; }
+.post-body li + li { margin-top: 8px; }
+.post-body img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+.post-body figure figcaption, .post-body .caption { margin-top: 8px; color: var(--muted); font-size: 14px; }
+.post-body mark { background: var(--mark); color: inherit; padding: 0 2px; }
+.post-body blockquote { margin-left: 0; padding: 12px 16px; border-left: 4px solid var(--accent); background: var(--soft); }
+.post-body blockquote > * { margin: 0; }
+.post-body blockquote > * + * { margin-top: 8px; }
+.post-body code { font: 0.9em ui-monospace, "SF Mono", Menlo, monospace; padding: 2px 4px; background: var(--soft); border-radius: 4px; }
+.post-body pre { padding: 16px; background: var(--soft); border-radius: 8px; overflow-x: auto; line-height: 1.5; }
+.post-body pre code { padding: 0; background: none; }
+.post-body table { width: 100%; border-collapse: collapse; font-size: 15px; display: block; overflow-x: auto; }
+.post-body th, .post-body td { padding: 8px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.post-body th { color: var(--muted); font-size: 14px; font-weight: 600; }
+.post-body hr { margin: 48px 0; border: 0; border-top: 1px solid var(--line); }
+.post-nav { margin-top: 64px; }
+
+@media (max-width: 480px) {
+  .intro h1, .post-head h1 { font-size: 26px; }
+  .post-body h2 { font-size: 21px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: color 0.2s; }
+}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.summary | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="site-head">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  </header>
+  <main id="main">
+    {{ content }}
+  </main>
+  <footer class="site-foot">
+    <p>{{ site.description }}</p>
+  </footer>
+</body>
+</html>

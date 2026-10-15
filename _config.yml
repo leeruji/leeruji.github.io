@@ -1,0 +1,11 @@
+title: 루지의 작업 기록
+description: 주니어 프로덕트 디자이너 루지가 만들고, 고치고, 배운 것을 남기는 곳
+lang: ko
+timezone: Asia/Seoul
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+permalink: /posts/:year/:month/:day/:title/
+exclude:
+  - README.md
