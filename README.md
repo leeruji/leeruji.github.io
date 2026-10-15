@@ -1,6 +1,6 @@
 # leeruji.github.io
 
-루지의 작업 기록 블로그 (GitHub Pages · Jekyll).
+leeruji의 작업 기록 블로그 (GitHub Pages · Jekyll).
 
 - 글: `_posts/YYYY-MM-DD-영문-주소.md` (맨 위 front matter: `title`, `summary`, `tags`)
 - 그림: `assets/img/`
