@@ -6,6 +6,7 @@ layout: default
     <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %-m월 %-d일" }}</time>{% if page.tags %} · {{ page.tags | join: " · " }}{% endif %}</p>
     <h1>{{ page.title }}</h1>
     {% if page.summary %}<p class="post-summary">{{ page.summary }}</p>{% endif %}
+    {% if page.original %}<p class="post-origin">티스토리에서 옮겨 온 글이에요.</p>{% endif %}
   </header>
   <div class="post-body">
     {{ content }}

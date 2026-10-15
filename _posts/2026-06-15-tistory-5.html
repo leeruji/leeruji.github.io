@@ -1,0 +1,116 @@
+---
+layout: post
+title: "Do it! 바이브 코딩 + 안티그래비티 스터디 1주차 - 레트로 게임 만들기"
+date: 2026-06-15 15:31:56 +0900
+summary: "이전 글 보기 - 타이머 사이트 만들기 01 사진: 갤러그, 스페이스 인베이더 책의 가이드에 따라 간단한 레트로 슈팅 게임의 MVP 모델 을 만들어보려고 한다.…"
+tags: ["바이브코딩 스터디", "Antigravity", "Do it! 바이브 코딩 + 안티그래비티", "된다! 바이브 코딩 + 안티그래비티"]
+original: https://meldue.tistory.com/5
+---
+<p><a href="https://meldue.tistory.com/4">이전 글 보기 - 타이머 사이트 만들기</a></p>
+
+<figure>
+  <img src="/assets/img/tistory/tistory-5-01.png" alt="" loading="lazy"><img src="/assets/img/tistory/tistory-5-02.png" alt="" loading="lazy">
+  01
+  <figcaption>사진: 갤러그, 스페이스 인베이더</figcaption>
+</figure>
+<p>책의 가이드에 따라 <strong>간단한 레트로 슈팅 게임의 MVP 모델</strong>을 만들어보려고 한다.</p>
+<p>이번 실습은 <strong>Antigravity IDE</strong> 뿐만 아니라 <strong>Antigravity도 함께 활용</strong>했다.</p>
+
+<blockquote><strong>MVP 모델이란?</strong><br>아이디어의 핵심 가치를 검증하기 위해 기능은 최소한만 담아 빠르게 구현한 버전</blockquote>
+
+<figure><img src="/assets/img/tistory/tistory-5-03.jpg" alt="" loading="lazy"></figure>
+<p>우선 <strong>Antigravity IDE</strong>를 실행한 후, <strong>[파일]</strong>에서 <strong>폴더 열기...(Opern Folder...)</strong>를 누른 후 <strong>'py_game'</strong>이라는 이름의 폴더를 생성했다.<br>(<strong>경로:</strong> PC사용자명폴더&gt;.gemini&gt;antigravity-ide&gt;scratch&gt;py_game)</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-04.png" alt="" loading="lazy"></figure>
+
+<p>그 뒤 <strong>Antigravity</strong>의 화면으로 이동해서, <strong>Projects 우측의 폴더 아이콘</strong>을 누르고 <strong>'New Project'&gt;'Add Folder'</strong>를 눌러 앞서 만든 <strong>'py_game'</strong> 폴더를 불러와준다.<br><br>* 처음 폴더를 불러올 경우, 기본적으로 상위 폴더인 '.gemini'가 시스템 상 숨겨져 있어 보이지 않는다.<br><strong>윈도우: 파일 탐색기 → 보기 탭 → "숨김 항목" 체크박스 켜기 / 맥: 파인더에서 'Cmd + Shift + .'</strong> 를 누르고, 위에 기재한 <strong>'py_game'</strong> 폴더 경로로 가서 <strong>'py_game'</strong> 폴더를 Antigravity New Project 탐색기에 끌어당기면 된다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-05.png" alt="" loading="lazy"></figure>
+
+<p>대화 창의 Model에서 [Fast] 모드를 선택하고, 에이전트에게 기획자 에이전트 역할을 부여했다.<br>제한된 사용량 안에서 보다 완성도 높은 결과를 얻기 위해 타깃 사용자와 게임 콘셉트를 명확하게 설정하고, 원하는 출력 형식까지 지정해줬다. 그리고 이 채팅의 이름은 <strong>'기획자 에이전트'</strong>로 지정했다!</p>
+
+<p>그러면 아래와 같이 기획자 에이전트가 여러 게임 스타일을 제안해 준다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-06.png" alt="" loading="lazy"></figure>
+
+<p>친절하게도 어떤 스타일을 선택해야 할 지 가이드까지 나와 있었다!</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-07.jpg" alt="" loading="lazy"></figure>
+
+<p>나는 안티그래비티가 처음이고, 이번 실습에서는 가볍게 게임을 만들며 개발 구조를 이해하는 것이 목적이었기 때문에 구현 난이도가 가장 낮은 <strong>1번 스페이스 가디언</strong>을 선택했고, 워크스페이스 폴더 안에 <strong>mvp_plan.md</strong>라는 마크다운 파일 생성 및 저장을 요청했다.<br><br>우측 화면이 기획자 에이전트가 만들어 준 기획서다!</p>
+<p>이번에는 이 기획서를 바탕으로 게임을 개발해보자.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-08.png" alt="" loading="lazy"></figure>
+
+<p><strong>윈도우: Ctrl+N / 맥: Cmd+N</strong>을 누르면 새로운 채팅이 생성된다.</p>
+<p>이번에도 마찬가지로 게임 개발자 역할을 부여하고, 구현 계획서를 요청했다. 이 채팅의 이름은 <strong>'개발자 에이전트'</strong>로 지정했다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-09.png" alt="" loading="lazy"></figure>
+
+<p>개발자 에이전트가 작성한 <strong>구현 계획서</strong>를 검토하고, 채팅 하단에 있는 <strong>'Proceed'</strong>를 눌러 개발 진행을 승인했다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-10.jpg" alt="" loading="lazy"></figure>
+
+<p>개발자 에이전트가 자동으로 코드를 생성하고 필요한 파일을 만들어 주었다.</p>
+
+<p>이제 다시 <strong>'Antigrvity IDE'</strong> 화면으로 돌아가서, 윈도우: Ctrl+' / 맥: Cmd+'을 누르거나</p>
+<p>하단의 '터미널' 탭에서 <strong>'python3 main.py'</strong> 명령어를 입력해 제작한 프로그램을 실행하면 된다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-11.png" alt="" loading="lazy"></figure>
+
+<p>그런데 <strong>'pygame'</strong> 라이브러리가 설치되어 있지 않아서, 경로를 찾을 수 없다는 오류가 발생했다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-12.png" alt="" loading="lazy"></figure>
+
+<p>이럴 땐 <strong>'Antigravity'</strong> 화면으로 돌아와서, 개발자 에이전트에게 질문하면 코드를 분석한 뒤 해결해 준다!</p>
+<p>이제 다시 <strong>'Antigrvity IDE'</strong> 화면으로 돌아가서 아까와 같은 명령어를 입력해 제작한 프로그램을 실행해 보자.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-13.gif" alt="" loading="lazy"></figure>
+
+<p>게임은 정상적으로 실행이 되지만, 생명이 3개가 남아있는데 1번만 적에게 닿아도 바로 게임 오버되는 문제가 있었다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-14.png" alt="" loading="lazy"></figure>
+<figure><img src="/assets/img/tistory/tistory-5-15.png" alt="" loading="lazy"></figure>
+
+<p>왜 발생했는지 원인을 알 수 없던 버그도 개발자 에이전트에게 질문하니 바로 해결해 주고,<br>문제의 원인과 해결 방법도 안내해 주었다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-16.gif" alt="" loading="lazy"></figure>
+
+<p>다시 명령어를 통해 게임을 실행해 보니 정상적으로 1회 맞을 때마다 생명이 1개씩만 깎이며<br>생명 3개가 모두 깎여야만 게임 오버되는 것을 확인할 수 있었다.</p>
+
+<p>그런데.. 위에 올린 gif는 배속 처리를 하지 않았는데도 적의 움직임 속도나 총알 갯수가 너무 많았다.</p>
+<p>STAGE 1 치고 난이도가 높아 밸런스 조절이 필요하다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-17.jpg" alt="" loading="lazy"></figure>
+
+<p>우선 개발자 에이전트에게 적이 움직이는 로직을 질문했다.</p>
+<p>동작 원리를 보니, <strong>'self.rect.y += ENEMY_DIVE_SPEED'</strong> 가 적군의 속도와 관련된 코드 같다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-18.png" alt="" loading="lazy"></figure>
+
+<p><strong>comfig.py</strong> 파일에서 값의 숫자만 변경하면 간단하게 속도와 난이도를 조절할 수 있다고 한다!</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-19.jpg" alt="" loading="lazy"></figure>
+
+<p>Antigravity IDE 화면에서 <strong>config.py</strong> 파일을 열어보니, 에이전트의 설명과 같이 게임의 설정 값들이 모아져 있었고 처음에 요청했던 대로 한글 주석이 달려 있어 구분하기가 쉬웠다.</p>
+<h2>차 -</h2>
+<figure><img src="/assets/img/tistory/tistory-5-20.png" alt="" loading="lazy"></figure>
+
+<p><strong>적군 대형의 세로 열 수</strong>와 <strong>기본 좌우 이동 속도</strong>, <strong>적군 대형이 벽에 닿았을 때 아래로 내려오는 거리</strong>, <strong>돌진하는 적의 하강 속도</strong>의 값을 줄였다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-5-21.gif" alt="" loading="lazy"></figure>
+
+<p>다시 실행해 보니 난이도가 완화되어 무사히 STAGE 1을 클리어할 수 있었다! (클리어하면 바로 STAGE 2로 전환된다.)</p>
+
+<p>다음 글에서는 안티그래비티에 <strong>디자이너 에이전트를 추가하여 게임 그래픽 이미지를 추가</strong>해 보고자 한다.</p>
+
+<hr>
+
+<figure><a href="https://product.kyobobook.co.kr/detail/S000219926543">
+ 
+
+<p>Do it! 바이브 코딩 + 안티그래비티 | 조준수 - 교보문고</p>
+<p>Do it! 바이브 코딩 + 안티그래비티 | 바이브 코딩 시대, ‘상상력’과 ‘실행력’이 당신의 무기가 된다! 프롬프트 설계법부터 게임, 생산성 도구, 풀스택 서비스 개발까지 한 권으로 끝내는 바이</p>
+<p>product.kyobobook.co.kr</p>
+
+</a></figure>

@@ -1,0 +1,70 @@
+---
+layout: post
+title: "Do it! 바이브 코딩 + 안티그래비티 스터디 1주차 - 타이머 사이트 만들기"
+date: 2026-06-15 15:21:18 +0900
+summary: "이전 글 보기 - AI를 활용한 개발에 적응하기 우선 책 의 가이드에 따라, 간단한 타이머 사이트 를 만들어 보기로 했다! Antigravity IDE 에이전트에…"
+tags: ["바이브코딩 스터디", "Do it! 바이브 코딩 + 안티그래비티", "된다! 바이브 코딩 + 안티그래비티"]
+original: https://meldue.tistory.com/4
+---
+<p><a href="https://meldue.tistory.com/3">이전 글 보기 - AI를 활용한 개발에 적응하기</a></p>
+
+<p>우선 <a href="https://product.kyobobook.co.kr/detail/S000219926543">책</a>의 가이드에 따라, 간단한 <strong>타이머 사이트</strong>를 만들어 보기로 했다!</p>
+
+<figure><img src="/assets/img/tistory/tistory-4-01.jpg" alt="" loading="lazy"></figure>
+
+<p><strong>Antigravity IDE</strong> 에이전트에게 이렇게 지시하니 똑똑하게 구현 계획서를 생성해준다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-4-02.jpg" alt="" loading="lazy"></figure>
+
+<p>화면에는 초록색 드래그와 빨간색 드래그가 있는데, <br>초록색 드래그는 새로 추가될 코드고 빨간색 드래그는 삭제될 코드이다.<br><br>지난 번 사이드 프로젝트에서 개발자 분들끼리 리뷰해달라는 메시지를 많이 봤었는데,<br>잘 코딩됐는지 검토하는 것 뿐만 아니라 승인이라는 의미도 있다는 사실을 깨달았다!</p>
+
+<p>지시에 맞게, 에이전트가 구현할 화면의 미리보기를 띄워준 후 내가 드래그 영역들을 검토한 뒤 <strong>Submit</strong>을 누르면 최종 반영된다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-4-03.jpg" alt="" loading="lazy"></figure>
+
+<p>이렇게 타이머 사이트가 쉽게 만들어졌는데, 너무 신기하게도 AI가 알아서 크롬 창을 열어서 미리보기 화면을 띄워줬다.</p>
+<p>게다가 AI가 직접 버튼들을 눌러보며 여러 기능을 테스트해보더니, 스크린샷도 찍고 녹화도 해줬다!!</p>
+
+<figure><img src="/assets/img/tistory/tistory-4-04.gif" alt="최종적으로 녹화된 비디오는 이렇게 다시 볼 수 있다." loading="lazy"><figcaption>최종적으로 녹화된 비디오는 이렇게 다시 볼 수 있다.</figcaption>
+</figure>
+
+<figure><img src="/assets/img/tistory/tistory-4-05.jpg" alt="" loading="lazy"></figure>
+
+<p>이번엔 타이머에 파스타 면을 삶을 때 활용할 수 있는 기능을 추가하고자 했다.</p>
+<p>파스타 버튼을 누르면 자동으로 8분 타이머가 시작되도록 프롬프트를 작성했다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-4-06.png" alt="파스타 버튼이 생기고, 시작 버튼을 누르니 8분 타이머가 시작되었다!" loading="lazy"><figcaption>파스타 버튼이 생기고, 시작 버튼을 누르니 8분 타이머가 시작되었다!</figcaption>
+</figure>
+
+<figure><img src="/assets/img/tistory/tistory-4-07.jpg" alt="" loading="lazy"></figure>
+
+<p>@(멘션) 기능을 활용해 어떤 편집기에서 지시할 지 지정해줄 수 있었다.<br>상단의 헤더가 거슬려서 지우고, 버튼의 영문을 한글로 변경해달라고 요청했다.</p>
+<figure><img src="/assets/img/tistory/tistory-4-08.jpg" alt="" loading="lazy"></figure>
+
+<p>우측 상단에 <strong>미트볼 메뉴 (점 3개)</strong>를 누르면, <strong>열려 있는 편집기 표시</strong>를 눌러 원하는 편집기로 바로 이동할 수가 있었다.</p>
+<figure><img src="/assets/img/tistory/tistory-4-09.png" alt="" loading="lazy"></figure>
+<figure><img src="/assets/img/tistory/tistory-4-10.png" alt="" loading="lazy"></figure>
+
+<p>또, 코멘트 기능을 사용해 결과물을 수정할 수도 있다고 한다.<br>생성된 <strong>'Walkthrough'</strong> 편집기 내 이미지에 커서를 대고 글자색을 녹색 테마로 변경해달라는 요청을 했다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-4-11.jpg" alt="" loading="lazy"></figure>
+
+<p>지금은 가볍게 프롬프팅해서 AI 냄새가 나는 디자인이지만,<br>구체적인 컬러 코드나 영역 지시가 있다면 더 예쁜 결과물을 만들 수 있을 것 같다.</p>
+
+<figure><img src="/assets/img/tistory/tistory-4-12.jpg" alt="" loading="lazy"></figure>
+
+<p>프롬프팅 1줄 만으로 <strong>script.js</strong> 파일에 한글 주석을 간편하게 달 수도 있다.</p>
+
+<p>더 진행하고 싶었는데, 무료 버전으로는 사용량을 다 써서 7일이나 기다려야 재충전된다고 한다. ㅠㅠ</p>
+<p>앞으로 어떻게 스터디를 진행할 지 조금 걱정되지만.. 생각보다 더 쉽고 재밌는 스터디 1주차였다!!</p>
+
+<hr>
+
+<figure><a href="https://product.kyobobook.co.kr/detail/S000219926543">
+ 
+
+<p>Do it! 바이브 코딩 + 안티그래비티 | 조준수 - 교보문고</p>
+<p>Do it! 바이브 코딩 + 안티그래비티 | 바이브 코딩 시대, ‘상상력’과 ‘실행력’이 당신의 무기가 된다! 프롬프트 설계법부터 게임, 생산성 도구, 풀스택 서비스 개발까지 한 권으로 끝내는 바이</p>
+<p>product.kyobobook.co.kr</p>
+
+</a></figure>
